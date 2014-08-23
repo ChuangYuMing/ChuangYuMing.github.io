@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[低調生活~莊育銘]]></title>
-  <link href="http://ChuangYuMing.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Test2 | 低調生活~莊育銘]]></title>
+  <link href="http://ChuangYuMing.github.io/blog/categories/test2/atom.xml" rel="self"/>
   <link href="http://ChuangYuMing.github.io/"/>
   <updated>2014-08-23T22:44:10+08:00</updated>
   <id>http://ChuangYuMing.github.io/</id>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Test2]]></title>
-    <link href="http://ChuangYuMing.github.io/blog/2014/08/23/test2/"/>
-    <updated>2014-08-23T08:26:44+08:00</updated>
-    <id>http://ChuangYuMing.github.io/blog/2014/08/23/test2</id>
-    <content type="html"><![CDATA[<p>@@</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[這事一個 Test 的概念!!]]></title>
