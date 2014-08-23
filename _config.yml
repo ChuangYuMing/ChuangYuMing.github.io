@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://ChuangYuMing.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: 低調生活~莊育銘
+subtitle: I  am who I am
+author: 莊育銘
 simple_search: https://www.google.com/search
-description:
+description: 記路學習歷程，以及生活一切事務，我叫莊育銘
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: harry1123@hotmail.com.tw
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -98,4 +98,4 @@ disqus_show_comment_count: false
 google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
