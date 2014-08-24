@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[低調生活~莊育銘]]></title>
-  <link href="http://chming.tw/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Blog | 低調生活~莊育銘]]></title>
+  <link href="http://chming.tw/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://chming.tw/"/>
   <updated>2014-08-24T18:56:53+08:00</updated>
   <id>http://chming.tw/</id>
@@ -90,7 +90,7 @@ Octopress 預設只要在_config.yml裡的<strong>google_analytics_tracking_id</
 <p>hinet可以代管dns<br/>
 主機名稱空白代表輸入www.chming.tw或chming.tw都可正確指向想要的位置<br/>
 雖然通常都說要24小時內生效，但其實過1.2小時就差不多OK了<br/>
-<img src="http://chming.tw/images/2014-08-24-start-blog-with-octopress-on-github/dns.jpg"></p>
+<img src="/images/2014-08-24-start-blog-with-octopress-on-github/dns.jpg"></p>
 
 <h3>CNAME</h3>
 

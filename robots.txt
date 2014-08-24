@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ChuangYuMing.github.io/sitemap.xml 
+Sitemap: http://chming.tw/sitemap.xml 

@@ -3,35 +3,29 @@
   
   
   <url>
-    <loc>http://ChuangYuMing.github.io/blog/2014/08/23/test2/</loc>
-    <lastmod>2014-08-23T08:26:44+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://ChuangYuMing.github.io/blog/2014/08/23/this-is-test/</loc>
-    <lastmod>2014-08-23T08:14:38+08:00</lastmod>
+    <loc>http://chming.tw/blog/2014/08/24/start-blog-with-octopress-on-github/</loc>
+    <lastmod>2014-08-24T15:03:35+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   
   
   <url>
-    <loc>http://ChuangYuMing.github.io/blog/archives/</loc>
-    <lastmod>2014-08-23T23:59:58+08:00</lastmod>
+    <loc>http://chming.tw/blog/archives/</loc>
+    <lastmod>2014-08-24T18:56:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://ChuangYuMing.github.io/</loc>
-    <lastmod>2014-08-23T23:59:58+08:00</lastmod>
+    <loc>http://chming.tw/</loc>
+    <lastmod>2014-08-24T18:56:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   
   <url>
-    <loc>http://ChuangYuMing.github.io/google3181fc5eb3619c8e.html</loc>
+    <loc>http://chming.tw/google3181fc5eb3619c8e.html</loc>
     <lastmod>2014-08-23T23:59:14Z</lastmod>
     <priority>0.6</priority>
   </url>
