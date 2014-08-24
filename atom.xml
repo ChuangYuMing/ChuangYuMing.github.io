@@ -4,7 +4,7 @@
   <title><![CDATA[低調生活~莊育銘]]></title>
   <link href="http://chming.tw/atom.xml" rel="self"/>
   <link href="http://chming.tw/"/>
-  <updated>2014-08-24T18:56:53+08:00</updated>
+  <updated>2014-08-24T19:00:53+08:00</updated>
   <id>http://chming.tw/</id>
   <author>
     <name><![CDATA[莊育銘]]></name>
@@ -39,14 +39,14 @@
 <h3>基本檔案架構</h3>
 
 <pre><code>-octopress  
-　- .theme　　　　　預設基本樣板  
-　- deploy　　　　  存放要deploy到github的檔案(重public複製過來的)  
-　- public　　　　　透過jekyll編譯完成的檔案  
-　- saas　　　　　　就...sass  
-　- source　　　　　存放未編譯檔案也是工作區  
-　- config.yml　　　網站基本設定檔，也是一些模板的變數來源 ex: site.url  
-　- Rakefile　　　　定義rake指令的任務(deploy、new_post...etc)  
-　- Gemfile　　　　 存放需要的套件  
+　- .theme           預設基本樣板  
+　- deploy           存放要deploy到github的檔案(重public複製過來的)  
+　- public           透過jekyll編譯完成的檔案  
+　- saas             就...sass  
+　- source           存放未編譯檔案也是工作區  
+　- config.yml       網站基本設定檔，也是一些模板的變數來源 ex: site.url  
+　- Rakefile         定義rake指令的任務(deploy、new_post...etc)  
+　- Gemfile          存放需要的套件  
 </code></pre>
 
 <h3>rake preview 問題</h3>
