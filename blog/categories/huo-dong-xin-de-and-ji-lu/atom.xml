@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[低調生活~莊育銘]]></title>
-  <link href="http://chming.tw/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 活動心得&紀錄 | 低調生活~莊育銘]]></title>
+  <link href="http://chming.tw/blog/categories/huo-dong-xin-de-and-ji-lu/atom.xml" rel="self"/>
   <link href="http://chming.tw/"/>
   <updated>2014-08-26T23:02:38+08:00</updated>
   <id>http://chming.tw/</id>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<blockquote><p>前言:<br/>
 UiGathering是致力於推廣使用者經驗的組織，而我也因為公司主管的邀約所以認識了它。過去就多多少少聽過UI/UX設計的消息但一直沒有深入去瞭解，所以今天有機會就馬上報名參加了他們的活動讓自己充電一下，也借此跟同事有多一些互動與認識。這篇就簡單記錄一下學習到的東西，以及理解的內容。</p></blockquote>
 
-<p><img src="http://chming.tw/images/2014-08-26-uigathering-activity-record/UX-infographic_mini.jpg" title="UX-design" alt="UX-design"></p>
+<p><img src="/images/2014-08-26-uigathering-activity-record/UX-infographic_mini.jpg" title="&ldquo;UX-design&rdquo; &ldquo;UX-design&rdquo;" ></p>
 
 <h3>溝通心理學:</h3>
 
@@ -90,97 +90,6 @@ UX: 使用者體驗</p>
 當天活動還有講到許多東西，想是公司如何推廣UX，台灣UX發展等等議題，不過這些目前離我還太遠就不多加紀錄了，我想先有個大方向就好了。<br/>
 UI/UX 對我來說可以說是一個全新的領域，聽完這些演講有種很充實的感覺，感覺自己又向上提升了一點。不過可惜的是我還是太害羞了，當天休息時間一直不敢主動找人聊天，但就像當天說的要走出舒適圈跟不同人溝通、互動，下次參加活動我一定要勇敢向前跨一步!!<br/>
 P.S 當天還買了一本講者的翻譯書&#8221;設計心理學&#8221;，因為本身對心理學有點興趣，且想多瞭解一下設計(兩個願望同時滿足阿~~)就直接買了，改天再來寫寫讀書心得。</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[部落格 With Octopress on GitHub && 域名申請]]></title>
-    <link href="http://chming.tw/blog/2014/08/24/start-blog-with-octopress-on-github/"/>
-    <updated>2014-08-24T15:03:35+08:00</updated>
-    <id>http://chming.tw/blog/2014/08/24/start-blog-with-octopress-on-github</id>
-    <content type="html"><![CDATA[<blockquote><p>前言:<br/>
-因為老朋友開始寫blog並且介紹Octropress這個framework給我，又重新燃起了我寫blog的慾望(雖然也沒寫過幾篇Otz..)
-希望這次能不斷持續下去，為了激勵自己還特地花錢申請了域名!!<br/>
-這次就簡單紀錄一下架站過程中遇到的一些問題~</p></blockquote>
-
-<h3>安裝Ruby以及DevKit</h3>
-
-<p>由於作業系統是windows，所以官方比較建議的方式是到<a href="http://rubyinstaller.org/downloads/" title="rubyinstaller">RubyInstaller</a>下載安裝Ruby<br/>
-在執行<code>bundle install</code>的時候會出現錯誤要求安裝<em>DevKit</em><br/>
-<em>DevKit</em>主要就是讓windows能夠執行native C/C++ extensions</p>
-
-<h3>deploy to github by https</h3>
-
-<p>若照著官方教學，預設都是透過ssh公私鑰加密來clone、deploy..etc<br/>
-但windows比較麻煩一點，因為沒有.ssh資料夾且沒有<em>ssh-keygen</em>指令，
-不過可以透過git bash或其他來下指令，但通常在windows下還是都推薦使用Putty<br/>
-不過個人有點懶爾且想多打一下帳號密碼(怕忘記&hellip;)，所以就直接改用https了。</p>
-
-<h3>基本檔案架構</h3>
-
-<pre><code>-octopress  
-　- .theme           預設基本樣板  
-　- deploy           存放要deploy到github的檔案(重public複製過來的)  
-　- public           透過jekyll編譯完成的檔案  
-　- saas             就...sass  
-　- source           存放未編譯檔案也是工作區  
-　- config.yml       網站基本設定檔，也是一些模板的變數來源 ex: site.url  
-　- Rakefile         定義rake指令的任務(deploy、new_post...etc)  
-　- Gemfile          存放需要的套件  
-</code></pre>
-
-<h3>rake preview 問題</h3>
-
-<p> <code>rake preview</code> 能啟動server並watch變動的檔案<br/>
- 但是每個幾分鐘都會不斷polling(輪詢)，似乎不太好<br/>
- 本身有提供解決方式，那就是在Gemfile加入已下的code</p>
-
-<pre><code>require 'rbconfig'
-if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
-  gem 'wdm', '&gt;= 0.1.0'
-end  
-</code></pre>
-
-<p>存檔並重新<code>bundle install</code>。</p>
-
-<h3>google analytics</h3>
-
-<p>做網站的我想應該沒用不用google analytics<br/>
-Octopress 預設只要在_config.yml裡的<strong>google_analytics_tracking_id</strong><br/>
-給定trackID就可以了。但問題是google analytics追蹤語法最近更新了!!<br/>
-而Octopress還是舊版的，所以必須自己手動修改。<br/>
-在source->include->google_analytics.html裡，更新為新版script<br/>
-P.S 別直接複製貼上</p>
-
-<pre><code>  &lt;script&gt;
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', '{ { site.google_analytics_tracking_id &lt;--這個很重要! } }', 'auto');
-  ga('send', 'pageview');
-&lt;/script&gt;
-</code></pre>
-
-<h3>申請domain name</h3>
-
-<p>原先打算在<a href="http://www.godaddy.com/" title="godaddy">GoDaddy</a>申請的，因為網路上有一些折價卷可以用，所以第一次申請可以省不少錢，但網站體驗實在太差了，在我最後結帳的時候竟然頁面兩個地方呈現各不同價格，但都可以點擊付費，然後我就搞糊塗了(也可能是我太笨了Otz..)，在加上網路上對於此網站一些功能設定的體驗評價也很差，所以就索性不申請了，最後繞了一大圈還是改申請台灣的hinet，因為我申請的是<strong>.tw</strong>所以在台灣申請還是比較便宜(3年2160元)~</p>
-
-<h3>DNS 設定</h3>
-
-<p>hinet可以代管dns<br/>
-主機名稱空白代表輸入www.chming.tw或chming.tw都可正確指向想要的位置<br/>
-雖然通常都說要24小時內生效，但其實過1.2小時就差不多OK了<br/>
-<img src="http://chming.tw/images/2014-08-24-start-blog-with-octopress-on-github/dns.jpg"></p>
-
-<h3>CNAME</h3>
-
-<p>最後只要將<em>CNAME</em>檔案放到source資料夾內，deploy到github master上就可以了<br/>
-<strong>P.S 以上是頂級域名且在user page(not project pages)上的方式</strong></p>
-
-<blockquote><p>後記:<br/>
-第一篇blog終於完成了，還挺花時間的&hellip;
-希望能再接再厲~</p></blockquote>
 ]]></content>
   </entry>
   
