@@ -4,7 +4,7 @@
   <title><![CDATA[低調生活~莊育銘]]></title>
   <link href="http://chming.tw/atom.xml" rel="self"/>
   <link href="http://chming.tw/"/>
-  <updated>2014-08-26T23:02:38+08:00</updated>
+  <updated>2014-08-27T00:49:15+08:00</updated>
   <id>http://chming.tw/</id>
   <author>
     <name><![CDATA[莊育銘]]></name>
@@ -30,6 +30,9 @@ UiGathering是致力於推廣使用者經驗的組織，而我也因為公司主
 <p>單單<strong>&ldquo;現在幾點了?&rdquo;</strong>，這麼簡單的一句話，在不同的情境中，都會有不同的涵義，可以是單純問時間，也可以是生氣的質問對方</p>
 
 <p>我們平常溝通都是包含一連串的過程、情境。</p>
+
+<!--more-->
+
 
 <p>1.瞭解:<br/>
 我們常常會對於對方的一些印象或是瞭解來決定溝通的內容或是語氣等等。</p>
@@ -115,6 +118,9 @@ P.S 當天還買了一本講者的翻譯書&#8221;設計心理學&#8221;，因�
 但windows比較麻煩一點，因為沒有.ssh資料夾且沒有<em>ssh-keygen</em>指令，
 不過可以透過git bash或其他來下指令，但通常在windows下還是都推薦使用Putty<br/>
 不過個人有點懶爾且想多打一下帳號密碼(怕忘記&hellip;)，所以就直接改用https了。</p>
+
+<!--more-->
+
 
 <h3>基本檔案架構</h3>
 
