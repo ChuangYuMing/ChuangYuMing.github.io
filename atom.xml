@@ -4,7 +4,7 @@
   <title><![CDATA[低調生活~莊育銘]]></title>
   <link href="http://chming.tw/atom.xml" rel="self"/>
   <link href="http://chming.tw/"/>
-  <updated>2014-08-30T00:03:51+08:00</updated>
+  <updated>2014-08-30T22:19:48+08:00</updated>
   <id>http://chming.tw/</id>
   <author>
     <name><![CDATA[莊育銘]]></name>
@@ -12,6 +12,93 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SVG Animation Practice 1]]></title>
+    <link href="http://chming.tw/blog/2014/08/30/svg-animation-practice-1/"/>
+    <updated>2014-08-30T21:03:56+08:00</updated>
+    <id>http://chming.tw/blog/2014/08/30/svg-animation-practice-1</id>
+    <content type="html"><![CDATA[<blockquote><p>最近常常看到ㄧ些動態icon、視覺化圖表或是酷炫的動畫效果，其背後都是透過svg以及javascript&amp;CSS互動的結果。而當我看了這份<a href="https://docs.google.com/presentation/d/1CNQLbqC0krocy_fZrM5fZ-YmQ2JgEADRh3qR6RbOOGk/preview#slide=id.p">投影片</a>後，讓我真的覺得<span style="color: red"><em>SVG IS THE FUTURE</em></span>。今天就稍微練習ㄧ下svg的animation效果。</p></blockquote>
+
+<!--more-->
+
+
+<p><link rel="stylesheet" href="http://chming.tw/stylesheets/2014-08-30-svg-animation-practice-1/style.css"></p>
+
+<p><svg width="500" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+  <animate xlink:href="#swipeText" id="swipe" attributeName="x"
+           from="1000" to="0" begin="0s" dur="3s" repeatCount="indefinite"/>
+  </defs>
+  <text id="swipeText" x="1000" y="40">SVG IS THE FUTURE</text>
+</svg></p>
+
+<pre><code>&lt;svg width="500" height="100" xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+&lt;defs&gt;
+  &lt;animate xlink:href="#swipeText" id="swipe" attributeName="x"
+           from="1000" to="0" begin="0s" dur="3s" repeatCount="indefinite"/&gt;
+  &lt;/defs&gt;
+  &lt;text id="swipeText" x="1000" y="40"&gt;SVG IS THE FUTURE&lt;/text&gt;
+&lt;/svg&gt;
+</code></pre>
+
+<p>簡單的文字跑馬燈，，開始時間0s，3s後結束，從1000的位置移到0，若把repeatCount=&ldquo;indefinite&#8221;改成fill= &#8220;freeze&#8221;則會固定動畫最後的結果。</p>
+
+<p><svg id="anitest" width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <path id="shape2" d="M 50 240 Q 800 0 590 240">
+      <animate attributeName = "d" begin = "0s" dur = "6s" from = "M 50 240 Q 800 0 590 240" to = "M 50 240 Q 800 0 590 240" repeatCount="indefinite" values = "
+        M 50 240 Q 800 0 590 240;
+        M 50 240  Q -150 680 590 240 ;
+        M 50 240 Q -120 -100 590 240;
+        M 50 240 Q 800 0 590 240;
+        M 50 240 Q -100 50 590 240;
+        M 50 240 Q 800 -50 590 240;
+        M 50 240 Q -100 50 590 240;
+        M 50 240 Q 800 650 590 240;
+        M 50 240 Q 800 0 590 240"
+      />
+    </path>
+  </svg></p>
+
+<pre><code>&lt;svg id="anitest" width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"&gt;
+&lt;path id="shape2" d="M 50 240 Q 800 0 590 240"&gt;
+  &lt;animate attributeName = "d" begin = "0s" dur = "6s" from = "M 50 240 Q 800 0 590 240" to = "M 50 240 Q 800 0 590 240" repeatCount="indefinite" values = "
+    M 50 240 Q 800 0 590 240;
+    M 50 240  Q -150 680 590 240 ;
+    M 50 240 Q -120 -100 590 240;
+    M 50 240 Q 800 0 590 240;
+    M 50 240 Q -100 50 590 240;
+    M 50 240 Q 800 -50 590 240;
+    M 50 240 Q -100 50 590 240;
+    M 50 240 Q 800 650 590 240;
+    M 50 240 Q 800 0 590 240"
+  /&gt;
+&lt;/path&gt;
+</code></pre>
+
+<p>  </svg></p>
+
+<p>這一個則是動態畫出不同的路徑圖，path的M、Q是畫圖的指令，參考[<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths</a>][]<br/>
+今天先練習Bezier curve的Q指令，之後再來玩更複雜的A(Arcs)，上面的例子就是不斷改面path的參數(values)，有點像是css3的Animation。</p>
+
+<pre><code>&lt;style&gt;
+#anitest path{
+  fill: #00397f;
+  stroke: #00397f;
+  stroke-width: 2;
+}
+ #anitest path:hover {
+    fill: lightgreen;
+    stroke: #lightgreen;
+}
+&lt;/style&gt;
+</code></pre>
+
+<p>最後加上css樣式讓畫面好看一點。</p>
+
+<blockquote><p>學習svg也挺花時間的，網路上資源還不算很完整，只能看國外的教學網站來學習，其實比較想學的是用js來完整控制svg，以及透過css來改變狀態，至於要怎麼畫出漂亮的SVG就是designer的工作了，哈哈。</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[街遊]街友的第二人生]]></title>

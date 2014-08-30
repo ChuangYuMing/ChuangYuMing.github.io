@@ -1,0 +1,13 @@
+ #swipeText{
+    fill: red;
+    font-size: 40px;
+}
+#anitest path{
+fill: #00397f;
+stroke: #00397f;
+stroke-width: 2;
+}
+#anitest path:hover {
+fill: lightgreen;
+stroke: lightgreen;
+}
