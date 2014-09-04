@@ -46,22 +46,23 @@
   <script>
        function init() 
        {
-           var PerformanceTiming = window.performance.timing;
-           console.log(PerformanceTiming);
-           console.log("loadEventEnd: " + PerformanceTiming.loadEventEnd);
-           if (window.console) console.log("Name: "        + PerformanceTiming.name      + "\n" +
-                                           "Entry Type: " + PerformanceTiming.entryType + "\n" +
-                                           "Start Time: " + PerformanceTiming.startTime + "\n" +
-                                           "Duration: "   + PerformanceTiming.duration  + "\n" + 
-                                           "Unload: "     + (PerformanceTiming.unloadEventEnd    - PerformanceTiming.unloadEventStart)  + "\n" +
-                                           "Redirect: "   + (PerformanceTiming.redirectEnd       - PerformanceTiming.redirectStart)     + "\n" +
-                                           "App Cache: "  + (PerformanceTiming.domainLookupStart - PerformanceTiming.fetchStart)        + "\n" +
-                                           "DNS: "        + (PerformanceTiming.domainLookupEnd   - PerformanceTiming.domainLookupStart) + "\n" +
-                                           "TCP: "        + (PerformanceTiming.connectEnd        - PerformanceTiming.connectStart)      + "\n" +
-                                           "Request: "    + (PerformanceTiming.responseStart     - PerformanceTiming.requestStart)      + "\n" +
-                                           "Response: "   + (PerformanceTiming.responseEnd       - PerformanceTiming.responseStart)     + "\n" +
-                                           "Processing: " + (PerformanceTiming.loadEventStart    - PerformanceTiming.responseEnd)       + "\n" +
-                                           "Onload: "     + (PerformanceTiming.loadEventEnd      - PerformanceTiming.loadEventStart)    + "\n");
+          // if(window.performance.timing){
+          //   var PerTiming = window.performance.timing;
+          //   console.log(PerTiming);
+          //   console.log("loadEventEnd: " + PerTiming.loadEventEnd);
+          //   if (window.console){
+          //     console.log(
+          //      "Unload: "     + (PerTiming.unloadEventEnd    - PerTiming.unloadEventStart)  + "\n" +
+          //      "Redirect: "   + (PerTiming.redirectEnd       - PerTiming.redirectStart)     + "\n" +
+          //      "App Cache: "  + (PerTiming.domainLookupStart - PerTiming.fetchStart)        + "\n" +
+          //      "DNS: "        + (PerTiming.domainLookupEnd   - PerTiming.domainLookupStart) + "\n" +
+          //      "TCP: "        + (PerTiming.connectEnd        - PerTiming.connectStart)      + "\n" +
+          //      "Request: "    + (PerTiming.responseStart     - PerTiming.requestStart)      + "\n" +
+          //      "Response: "   + (PerTiming.responseEnd       - PerTiming.responseStart)     + "\n" +
+          //      "Processing: " + (PerTiming.loadEventStart    - PerTiming.responseEnd)       + "\n" +
+          //      "Onload: "     + (PerTiming.loadEventEnd      - PerTiming.loadEventStart)    + "\n");
+          //   } 
+          // }   
        }
   </script>
   <header role="banner"><hgroup>
@@ -257,6 +258,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/04/navigation-timing/">Navigation Timing API (網頁效能分析)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/03/collapsing-margins/">[CSS]Collapsing Margins(崩潰邊界)</a>
       </li>
     
@@ -272,10 +277,6 @@
         <a href="/blog/2014/08/26/uigathering-activity-record/">UiGathering-UX設計，活動心得&記錄</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/08/24/start-blog-with-octopress-on-github/">部落格 With Octopress on GitHub && 域名申請</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -285,6 +286,7 @@
 <li class='category'><a href='/blog/categories/svg/'>svg (1)</a></li>
 <li class='category'><a href='/blog/categories/huo-dong-xin-de-and-ji-lu/'>活動心得&紀錄 (2)</a></li>
 <li class='category'><a href='/blog/categories/wang-zhan-jia-she/'>網站架設 (1)</a></li>
+<li class='category'><a href='/blog/categories/wang-ye-xiao-neng-fen-xi/'>網頁效能分析 (1)</a></li>
 
   </ul>
 </section><!-- 

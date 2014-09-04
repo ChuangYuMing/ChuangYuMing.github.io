@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 網頁效能分析 | 低調生活~莊育銘]]></title>
+  <link href="http://chming.tw/blog/categories/wang-ye-xiao-neng-fen-xi/atom.xml" rel="self"/>
+  <link href="http://chming.tw/"/>
+  <updated>2014-09-05T00:55:38+08:00</updated>
+  <id>http://chming.tw/</id>
+  <author>
+    <name><![CDATA[莊育銘]]></name>
+    <email><![CDATA[harry1123@hotmail.com.tw]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Navigation Timing API (網頁效能分析)]]></title>
+    <link href="http://chming.tw/blog/2014/09/04/navigation-timing/"/>
+    <updated>2014-09-04T23:31:23+08:00</updated>
+    <id>http://chming.tw/blog/2014/09/04/navigation-timing</id>
+    <content type="html"><![CDATA[<blockquote><p>網站的開啟、執行速度往往會影響用戶的體驗與心情，也是能否留住用戶的重要指標之一，所以身為網頁開發者除了注重畫面呈現外，網站的效率也是需要被重視的。</p></blockquote>
+
+<p>Navigation Timing 是W3C提供的一組API，可以用來做網頁的效能分析，主要目的就是蒐集<span style="color: red"><strong>真實使用者</strong></span>的資料。通常我們都會使用開發者工具來監測Network的資料，或是利用PageSpeed、WebPageTest等工具或網站來做效能的分析，但有什麼比使用者真實的數據還要有用呢XD</p>
+
+<p><img src="/images/2014-09-04-navigation-timing/timing-overview.jpg" width="640" height="480" title="&ldquo;navigation timing&rdquo; &ldquo;navigation-timing&rdquo;" ></p>
+
+<!-- more -->
+
+
+<p>上面那張圖清楚的說明了連接到一個網頁的開始與結束的過程(由左至右)  ，以及各階段的變數名稱，全都紀錄在<code>window.performance.timing</code>裡面。</p>
+
+<p>像是我想要知道DNS的查詢時間，就可以想這樣寫</p>
+
+<pre><code>var PerTiming = window.performance.timing;   
+console.log(
+    "DNS: "+ (PerTiming.domainLookupEnd   - PerTiming.domainLookupStart))
+</code></pre>
+
+<p>TCP three way handshake 時間</p>
+
+<pre><code>var PerTiming = window.performance.timing;   
+console.log( 
+    "TCP: "+ (PerTiming.connectEnd - PerTiming.connectStart))
+</code></pre>
+
+<p>全部屬性，紀錄格式為由1970年1月1日到目前為止的時間戳記</p>
+
+<p><img src="/images/2014-09-04-navigation-timing/navigation-timing.jpg" width="503" height="374" title="&ldquo;navigation timing&rdquo; &ldquo;navigation-timing&rdquo;" ></p>
+
+<p>一些常用設定，記得寫在 <code>onload</code>事件裡，確保所有值都能正確取得。</p>
+
+<pre><code>&lt;body onload="init()"&gt;
+&lt;script&gt;
+   function init() 
+   {
+      var PerTiming = window.performance.timing;
+      console.log(PerTiming);
+      console.log("loadEventEnd: " + PerTiming.loadEventEnd);
+      if (window.console){
+        console.log(
+         "Unload: "     + (PerTiming.unloadEventEnd    - PerTiming.unloadEventStart)  + "\n" +
+         "Redirect: "   + (PerTiming.redirectEnd       - PerTiming.redirectStart)     + "\n" +
+         "App Cache: "  + (PerTiming.domainLookupStart - PerTiming.fetchStart)        + "\n" +
+         "DNS: "        + (PerTiming.domainLookupEnd   - PerTiming.domainLookupStart) + "\n" +
+         "TCP: "        + (PerTiming.connectEnd        - PerTiming.connectStart)      + "\n" +
+         "Request: "    + (PerTiming.responseStart     - PerTiming.requestStart)      + "\n" +
+         "Response: "   + (PerTiming.responseEnd       - PerTiming.responseStart)     + "\n" +
+         "Processing: " + (PerTiming.loadEventStart    - PerTiming.responseEnd)       + "\n" +
+         "Onload: "     + (PerTiming.loadEventEnd      - PerTiming.loadEventStart)    + "\n");
+      } 
+   }
+&lt;/script&gt;
+</code></pre>
+
+<blockquote><p>P.S<br/>
+Navigation Timing API 在IE9以上、chrome、firefox都支援。<br/>
+W3C也已經開始規劃<a href="http://www.w3.org/TR/navigation-timing-2/">Navigation Timing API 2.0</a> 的草案了，不過大概還要一陣才會釋出並且市面上瀏覽器均支援吧。</p></blockquote>
+
+<p>參考:<br/>
+[<a href="http://www.w3.org/TR/navigation-timing/">http://www.w3.org/TR/navigation-timing/</a>]<br/>
+[<a href="http://www.w3.org/TR/navigation-timing-2/">http://www.w3.org/TR/navigation-timing-2/</a>]<br/>
+[<a href="https://developer.mozilla.org/en-US/docs/Navigation_timing">https://developer.mozilla.org/en-US/docs/Navigation_timing</a>]</p>
+]]></content>
+  </entry>
+  
+</feed>

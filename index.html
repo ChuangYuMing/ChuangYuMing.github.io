@@ -9,8 +9,7 @@
   <meta name="author" content="莊育銘">
 
   
-  <meta name="description" content="最近又遇到margin怎麼推都不是想要的情況，不是沒有反應就是連父元素都推動了。
-今天花點時間稍微了解了一下什麼是Collapsing margins(邊界崩潰)，希望之後不會在犯錯了。 Collapsing margins 根據w3c的說法，所謂的Collapsing &hellip;">
+  <meta name="description" content="網站的開啟、執行速度往往會影響用戶的體驗與心情，也是能否留住用戶的重要指標之一，所以身為網頁開發者除了注重畫面呈現外，網站的效率也是需要被重視的。 Navigation Timing 是W3C提供的一組API，可以用來做網頁的效能分析，主要目的就是蒐集真實使用者的資料。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -47,22 +46,23 @@
   <script>
        function init() 
        {
-           var PerformanceTiming = window.performance.timing;
-           console.log(PerformanceTiming);
-           console.log("loadEventEnd: " + PerformanceTiming.loadEventEnd);
-           if (window.console) console.log("Name: "        + PerformanceTiming.name      + "\n" +
-                                           "Entry Type: " + PerformanceTiming.entryType + "\n" +
-                                           "Start Time: " + PerformanceTiming.startTime + "\n" +
-                                           "Duration: "   + PerformanceTiming.duration  + "\n" + 
-                                           "Unload: "     + (PerformanceTiming.unloadEventEnd    - PerformanceTiming.unloadEventStart)  + "\n" +
-                                           "Redirect: "   + (PerformanceTiming.redirectEnd       - PerformanceTiming.redirectStart)     + "\n" +
-                                           "App Cache: "  + (PerformanceTiming.domainLookupStart - PerformanceTiming.fetchStart)        + "\n" +
-                                           "DNS: "        + (PerformanceTiming.domainLookupEnd   - PerformanceTiming.domainLookupStart) + "\n" +
-                                           "TCP: "        + (PerformanceTiming.connectEnd        - PerformanceTiming.connectStart)      + "\n" +
-                                           "Request: "    + (PerformanceTiming.responseStart     - PerformanceTiming.requestStart)      + "\n" +
-                                           "Response: "   + (PerformanceTiming.responseEnd       - PerformanceTiming.responseStart)     + "\n" +
-                                           "Processing: " + (PerformanceTiming.loadEventStart    - PerformanceTiming.responseEnd)       + "\n" +
-                                           "Onload: "     + (PerformanceTiming.loadEventEnd      - PerformanceTiming.loadEventStart)    + "\n");
+          // if(window.performance.timing){
+          //   var PerTiming = window.performance.timing;
+          //   console.log(PerTiming);
+          //   console.log("loadEventEnd: " + PerTiming.loadEventEnd);
+          //   if (window.console){
+          //     console.log(
+          //      "Unload: "     + (PerTiming.unloadEventEnd    - PerTiming.unloadEventStart)  + "\n" +
+          //      "Redirect: "   + (PerTiming.redirectEnd       - PerTiming.redirectStart)     + "\n" +
+          //      "App Cache: "  + (PerTiming.domainLookupStart - PerTiming.fetchStart)        + "\n" +
+          //      "DNS: "        + (PerTiming.domainLookupEnd   - PerTiming.domainLookupStart) + "\n" +
+          //      "TCP: "        + (PerTiming.connectEnd        - PerTiming.connectStart)      + "\n" +
+          //      "Request: "    + (PerTiming.responseStart     - PerTiming.requestStart)      + "\n" +
+          //      "Response: "   + (PerTiming.responseEnd       - PerTiming.responseStart)     + "\n" +
+          //      "Processing: " + (PerTiming.loadEventStart    - PerTiming.responseEnd)       + "\n" +
+          //      "Onload: "     + (PerTiming.loadEventEnd      - PerTiming.loadEventStart)    + "\n");
+          //   } 
+          // }   
        }
   </script>
   <header role="banner"><hgroup>
@@ -95,6 +95,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h2 class="entry-title"><a href="/blog/2014/09/04/navigation-timing/">Navigation Timing API (網頁效能分析)</a></h2>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-04T23:31:23+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:31 pm</span></time>
+        
+           | <a href="/blog/2014/09/04/navigation-timing/#disqus_thread"
+             data-disqus-identifier="http://chming.tw/blog/2014/09/04/navigation-timing/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>網站的開啟、執行速度往往會影響用戶的體驗與心情，也是能否留住用戶的重要指標之一，所以身為網頁開發者除了注重畫面呈現外，網站的效率也是需要被重視的。</p></blockquote>
+
+<p>Navigation Timing 是W3C提供的一組API，可以用來做網頁的效能分析，主要目的就是蒐集<span style="color: red"><strong>真實使用者</strong></span>的資料。通常我們都會使用開發者工具來監測Network的資料，或是利用PageSpeed、WebPageTest等工具或網站來做效能的分析，但有什麼比使用者真實的數據還要有用呢XD</p>
+
+<p><img src="/images/2014-09-04-navigation-timing/timing-overview.jpg" width="640" height="480" title="navigation timing" alt="navigation-timing"></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/09/04/navigation-timing/">More &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -332,6 +373,10 @@ UiGathering是致力於推廣使用者經驗的組織，而我也因為公司主
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/04/navigation-timing/">Navigation Timing API (網頁效能分析)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/03/collapsing-margins/">[CSS]Collapsing Margins(崩潰邊界)</a>
       </li>
     
@@ -347,10 +392,6 @@ UiGathering是致力於推廣使用者經驗的組織，而我也因為公司主
         <a href="/blog/2014/08/26/uigathering-activity-record/">UiGathering-UX設計，活動心得&記錄</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/08/24/start-blog-with-octopress-on-github/">部落格 With Octopress on GitHub && 域名申請</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -360,6 +401,7 @@ UiGathering是致力於推廣使用者經驗的組織，而我也因為公司主
 <li class='category'><a href='/blog/categories/svg/'>svg (1)</a></li>
 <li class='category'><a href='/blog/categories/huo-dong-xin-de-and-ji-lu/'>活動心得&紀錄 (2)</a></li>
 <li class='category'><a href='/blog/categories/wang-zhan-jia-she/'>網站架設 (1)</a></li>
+<li class='category'><a href='/blog/categories/wang-ye-xiao-neng-fen-xi/'>網頁效能分析 (1)</a></li>
 
   </ul>
 </section><!-- 
