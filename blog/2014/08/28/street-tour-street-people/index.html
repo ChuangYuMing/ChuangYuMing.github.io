@@ -43,7 +43,28 @@
 
 </head>
 
-<body   >
+<body onload="init()"   >
+  <script>
+       function init() 
+       {
+           var PerformanceTiming = window.performance.timing;
+           console.log(PerformanceTiming);
+           console.log("loadEventEnd: " + PerformanceTiming.loadEventEnd);
+           if (window.console) console.log("Name: "        + PerformanceTiming.name      + "\n" +
+                                           "Entry Type: " + PerformanceTiming.entryType + "\n" +
+                                           "Start Time: " + PerformanceTiming.startTime + "\n" +
+                                           "Duration: "   + PerformanceTiming.duration  + "\n" + 
+                                           "Unload: "     + (PerformanceTiming.unloadEventEnd    - PerformanceTiming.unloadEventStart)  + "\n" +
+                                           "Redirect: "   + (PerformanceTiming.redirectEnd       - PerformanceTiming.redirectStart)     + "\n" +
+                                           "App Cache: "  + (PerformanceTiming.domainLookupStart - PerformanceTiming.fetchStart)        + "\n" +
+                                           "DNS: "        + (PerformanceTiming.domainLookupEnd   - PerformanceTiming.domainLookupStart) + "\n" +
+                                           "TCP: "        + (PerformanceTiming.connectEnd        - PerformanceTiming.connectStart)      + "\n" +
+                                           "Request: "    + (PerformanceTiming.responseStart     - PerformanceTiming.requestStart)      + "\n" +
+                                           "Response: "   + (PerformanceTiming.responseEnd       - PerformanceTiming.responseStart)     + "\n" +
+                                           "Processing: " + (PerformanceTiming.loadEventStart    - PerformanceTiming.responseEnd)       + "\n" +
+                                           "Onload: "     + (PerformanceTiming.loadEventEnd      - PerformanceTiming.loadEventStart)    + "\n");
+       }
+  </script>
   <header role="banner"><hgroup>
   <h1><a href="/">低調生活~莊育銘</a></h1>
   
